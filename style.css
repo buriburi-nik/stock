@@ -574,69 +574,6 @@ button:active {
     display: none !important;
 }
 
-@media (max-width: 768px) {
-    .dashboard-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .search-controls {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    
-    .input-group {
-        width: 100%;
-    }
-    
-    .header h1 {
-        font-size: 2.5rem;
-    }
-    
-    .container {
-        padding: 15px;
-    }
-    
-    .stock-info {
-        grid-template-columns: 1fr;
-    }
-    
-    .card {
-        padding: 20px;
-    }
-    
-    .chart-container {
-        height: 300px;
-        padding: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .trending-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .info-item {
-        padding: 15px;
-    }
-    
-    .header h1 {
-        font-size: 2rem;
-    }
-    
-    .live-clock {
-        font-size: 1rem;
-        padding: 12px 20px;
-    }
-    
-    .comparison-table {
-        font-size: 0.85rem;
-    }
-    
-    .comparison-table th,
-    .comparison-table td {
-        padding: 10px 8px;
-    }
-}
 
 
 
@@ -692,4 +629,312 @@ button:active {
     text-align: center;
     letter-spacing: 1px;
     text-transform: uppercase;
+}
+
+/* Tablet Landscape Styles (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .container {
+        padding: 25px;
+    }
+    
+    .search-controls {
+        justify-content: space-between;
+    }
+    
+    .input-group {
+        min-width: 200px;
+    }
+    
+    button {
+        min-width: 140px;
+    }
+    
+    .trending-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .stock-info {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Mobile Landscape & Small Tablet (480px - 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .search-controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+    
+    .input-group {
+        width: 100%;
+        min-width: unset;
+    }
+    
+    button {
+        min-width: unset;
+        width: 100%;
+    }
+    
+    .container {
+        padding: 20px 15px;
+    }
+    
+    .stock-info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .trending-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .comparison-table {
+        font-size: 0.85rem;
+    }
+    
+    .chart-container {
+        height: 280px;
+        padding: 15px;
+    }
+    
+    .card {
+        padding: 20px 15px;
+    }
+    
+    .live-clock {
+        margin: 0 5px;
+    }
+}
+
+/* Mobile Portrait (320px - 479px) */
+@media (max-width: 479px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+    
+    .search-controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+    
+    .input-group {
+        width: 100%;
+        min-width: unset;
+    }
+    
+    .input-group label {
+        font-size: 0.8rem;
+    }
+    
+    button {
+        min-width: unset;
+        width: 100%;
+        padding: 14px 18px;
+        font-size: 0.9rem;
+    }
+    
+    .container {
+        padding: 15px 10px;
+    }
+    
+    .header {
+        margin-bottom: 30px;
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+        line-height: 1.1;
+    }
+    
+    .header p {
+        font-size: 1rem;
+        padding: 0 5px;
+    }
+    
+    .live-clock {
+        padding: 15px 20px;
+        margin: 0;
+    }
+    
+    .clock-time {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+    
+    .clock-date {
+        font-size: 0.9rem;
+    }
+    
+    .stock-info {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .info-item {
+        padding: 15px 12px;
+    }
+    
+    .info-label {
+        font-size: 0.75rem;
+        margin-bottom: 6px;
+    }
+    
+    .info-value {
+        font-size: 1.2rem;
+    }
+    
+    .trending-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .trending-item {
+        padding: 18px 15px;
+        font-size: 0.95rem;
+    }
+    
+    .comparison-table {
+        font-size: 0.8rem;
+        overflow-x: auto;
+        display: block;
+        white-space: nowrap;
+    }
+    
+    .comparison-table thead,
+    .comparison-table tbody,
+    .comparison-table tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+        padding: 8px 6px;
+        font-size: 0.75rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .comparison-table button {
+        padding: 4px 8px;
+        font-size: 0.7rem;
+    }
+    
+    .chart-container {
+        height: 250px;
+        padding: 10px;
+        margin-top: 15px;
+    }
+    
+    .card {
+        padding: 18px 12px;
+    }
+    
+    .card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 18px;
+        gap: 10px;
+    }
+    
+    .icon {
+        font-size: 1.1rem;
+    }
+    
+    .search-section {
+        padding: 20px 15px;
+        margin-bottom: 25px;
+    }
+    
+    input, select {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .loading {
+        padding: 25px 15px;
+    }
+    
+    .spinner {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .error {
+        padding: 15px 12px;
+        font-size: 0.9rem;
+        margin: 15px 0;
+    }
+}
+
+/* Extra Small Mobile (max-width: 320px) */
+@media (max-width: 320px) {
+    .container {
+        padding: 12px 8px;
+    }
+    
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .header p {
+        font-size: 0.9rem;
+    }
+    
+    .live-clock {
+        padding: 12px 16px;
+    }
+    
+    .clock-time {
+        font-size: 1.5rem;
+    }
+    
+    .clock-date {
+        font-size: 0.8rem;
+    }
+    
+    .card {
+        padding: 15px 10px;
+    }
+    
+    .search-section {
+        padding: 18px 12px;
+    }
+    
+    input, select, button {
+        padding: 10px 12px;
+        font-size: 0.85rem;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+        padding: 6px 4px;
+        font-size: 0.7rem;
+    }
+    
+    .trending-item {
+        padding: 15px 10px;
+        font-size: 0.9rem;
+    }
+    
+    .info-value {
+        font-size: 1.1rem;
+    }
+    
+    .chart-container {
+        height: 220px;
+        padding: 8px;
+    }
 }
