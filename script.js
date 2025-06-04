@@ -176,3 +176,41 @@ function selectTrendingStock(symbol) {
   $('stockSymbol').value = symbol;
   loadStock();
 }
+
+
+// Initialize clock when page loads
+document.addEventListener('DOMContentLoaded', function() {
+  startClock();
+});
+
+function startClock() {
+  function updateClock() {
+    const now = new Date();
+    
+    // Format time (24-hour format)
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+    const timeString = `${hours}:${minutes}:${seconds}`;
+    
+    // Format date
+    const options = { 
+      weekday: 'long', 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    };
+    const dateString = now.toLocaleDateString('en-US', options);
+    
+    // Update clock elements
+    const clockTime = $('clockTime');
+    const clockDate = $('clockDate');
+    
+    if (clockTime) clockTime.textContent = timeString;
+    if (clockDate) clockDate.textContent = dateString;
+  }
+  
+  // Update immediately, then every second
+  updateClock();
+  setInterval(updateClock, 1000);
+}
