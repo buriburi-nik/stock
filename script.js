@@ -1,6 +1,4 @@
-
-
-const API_KEY = '2405f1a0ad504c44aafe625e0a93dc3b'; // Replace with your key
+const API_KEY = '2405f1a0ad504c44aafe625e0a93dc3b';
 const API_BASE = 'https://api.twelvedata.com';
 
 const $ = (id) => document.getElementById(id);
@@ -16,9 +14,9 @@ function hide(id) {
 }
 
 function showError(msg) {
-  $('errorMsg').textContent = msg;
-  show('errorMsg');
-  setTimeout(() => hide('errorMsg'), 3000);
+  $('errorMessage').textContent = msg;
+  show('errorMessage');
+  setTimeout(() => hide('errorMessage'), 3000);
 }
 
 async function loadStock() {
@@ -26,11 +24,19 @@ async function loadStock() {
   if (!symbol) return showError('Enter a stock symbol');
   show('loadingIndicator');
 
+  if (cache[symbol]) {
+    displayStock(cache[symbol]);
+    loadChart(symbol);
+    hide('loadingIndicator');
+    return;
+  }
+
   try {
     const res = await fetch(`${API_BASE}/quote?symbol=${symbol}&apikey=${API_KEY}`);
     const data = await res.json();
 
     if (data && !data.code) {
+      cache[symbol] = data;
       displayStock(data);
       loadChart(symbol);
     } else {
@@ -144,9 +150,9 @@ async function addToComparison() {
 }
 
 function updateComparison() {
-  const tbody = $('comparisonTable').querySelector('tbody');
+  const tbody = $('comparisonBody');
   tbody.innerHTML = '';
-  stocks.forEach(s => {
+  stocks.forEach((s, i) => {
     const cls = s.change >= 0 ? 'positive' : 'negative';
     tbody.innerHTML += `
       <tr>
@@ -155,7 +161,18 @@ function updateComparison() {
         <td class="${cls}">${s.change.toFixed(2)}</td>
         <td class="${cls}">${s.changePercent.toFixed(2)}%</td>
         <td>${s.volume.toLocaleString()}</td>
+        <td><button onclick="removeStock(${i})">❌</button></td>
       </tr>
     `;
   });
+}
+
+function removeStock(index) {
+  stocks.splice(index, 1);
+  updateComparison();
+}
+
+function selectTrendingStock(symbol) {
+  $('stockSymbol').value = symbol;
+  loadStock();
 }

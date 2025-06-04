@@ -84,7 +84,7 @@ body::before {
     background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple), var(--neon-pink));
     background-size: 200% 200%;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    /* -webkit-text-fill-color: transparent; */
     background-clip: text;
     animation: gradientText 3s ease infinite;
     text-shadow: var(--text-glow);
@@ -166,8 +166,12 @@ input, select, button {
     overflow: hidden;
 }
 
-input::placeholder, select option {
+input::placeholder  {
     color: rgba(255, 255, 255, 0.5);
+}
+select option{
+    background: var(--dark-bg);
+    color: #fff;
 }
 
 input:focus, select:focus {
