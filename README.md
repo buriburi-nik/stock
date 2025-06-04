@@ -14,25 +14,11 @@ A modern, responsive web application for tracking real-time stock data with an e
 - **Live Clock**: Real-time date and time display
 - **Responsive Design**: Optimized for desktop, tablet, and mobile devices
 
-### 🎨 Modern UI/UX
-- **Neon-themed Design**: Cyberpunk-inspired visual aesthetics
-- **Glassmorphism Effects**: Blur effects and transparent elements
-- **Smooth Animations**: CSS animations and transitions
-- **Interactive Elements**: Hover effects and micro-interactions
-- **Loading States**: Professional loading indicators
-- **Error Handling**: User-friendly error messages
+
 
 ## 🚀 Live Demo
 
-Experience the dashboard live: [Stock Tracker Dashboard](#) *(Add your deployment URL here)*
-
-## 📱 Screenshots
-
-### Desktop View
-*Add desktop screenshot here*
-
-### Mobile View
-*Add mobile screenshot here*
+Experience the dashboard live: [live demo](https://stock-nine-lemon.vercel.app/)
 
 ## 🛠️ Installation & Setup
 
@@ -45,8 +31,8 @@ Experience the dashboard live: [Stock Tracker Dashboard](#) *(Add your deploymen
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/yourusername/stock-tracker-dashboard.git
-   cd stock-tracker-dashboard
+   git clone https://github.com/buriburi-nik/stock-tracker-dashboard
+   cd stock
    ```
 
 2. **Configure API Key**
@@ -91,16 +77,6 @@ Edit the trending stocks list in `index.html`:
 <option value="SYMBOL">SYMBOL - Company Name</option>
 ```
 
-#### Modifying Color Scheme
-Update CSS variables in `style.css`:
-```css
-:root {
-    --neon-blue: #00f5ff;
-    --neon-purple: #8b5cf6;
-    --neon-pink: #f0abfc;
-    /* Add your custom colors */
-}
-```
 
 ## 📋 Usage Guide
 
