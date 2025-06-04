@@ -135,12 +135,6 @@ stock-tracker-dashboard/
 - **Monospace**: Courier New (for clock display)
 - **Weight Range**: 300-900
 
-### Responsive Breakpoints
-- **Desktop**: 1024px+
-- **Tablet**: 768px - 1024px
-- **Mobile Landscape**: 480px - 767px
-- **Mobile Portrait**: 320px - 479px
-- **Small Mobile**: <320px
 
 ## 🔌 API Integration
 
@@ -169,15 +163,6 @@ stock-tracker-dashboard/
 - **Optimized CSS**: Hardware-accelerated animations
 - **Minimal Dependencies**: Only Chart.js for visualizations
 
-## 📱 Browser Compatibility
-
-| Browser | Version | Status |
-|---------|---------|--------|
-| Chrome | 80+ | ✅ Full Support |
-| Firefox | 75+ | ✅ Full Support |
-| Safari | 13+ | ✅ Full Support |
-| Edge | 80+ | ✅ Full Support |
-| Opera | 67+ | ✅ Full Support |
 
 ## 🐛 Troubleshooting
 
@@ -241,11 +226,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **CSS Glassmorphism** - Inspiration for modern UI design
 - **Open Source Community** - For continuous inspiration and learning
 
-## 📞 Support & Contact
 
-- **Issues**: [GitHub Issues](https://github.com/yourusername/stock-tracker-dashboard/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/stock-tracker-dashboard/discussions)
-- **Email**: your.email@example.com
 
 ## 🔮 Future Enhancements
 
@@ -261,14 +242,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [ ] Cryptocurrency support
 - [ ] Multi-language support
 
-### Version History
-- **v1.0.0** - Initial release with core functionality
-- **v1.1.0** - Added responsive design and mobile optimization
-- **v1.2.0** - Enhanced UI with glassmorphism effects
-- **v1.3.0** - Added stock comparison feature
 
----
 
-**Built with ❤️ and ☕ by [Your Name]**
 
-*If you find this project helpful, please consider giving it a ⭐ on GitHub!*
+
