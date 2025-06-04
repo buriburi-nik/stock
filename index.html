@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Tracker Dashboard</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📈 Stock Tracker Dashboard</h1>
+            <p>Real-time stock data, trends, and comparisons</p>
+        </div>
+
+        <div class="search-section">
+            <div class="search-controls">
+                <div class="input-group">
+                    <label for="stockSymbol">Stock Symbol</label>
+                    <input type="text" id="stockSymbol" placeholder="e.g., AAPL, MSFT, GOOGL" style="min-width: 200px;">
+                </div>
+                <div class="input-group">
+                    <label for="trendingSelect">Trending Stocks</label>
+                    <select id="trendingSelect" style="min-width: 180px;">
+                        <option value="">Select Trending Stock</option>
+                        <option value="AAPL">AAPL - Apple Inc.</option>
+                        <option value="MSFT">MSFT - Microsoft</option>
+                        <option value="GOOGL">GOOGL - Alphabet</option>
+                        <option value="AMZN">AMZN - Amazon</option>
+                        <option value="TSLA">TSLA - Tesla</option>
+                        <option value="META">META - Meta Platforms</option>
+                        <option value="NVDA">NVDA - NVIDIA</option>
+                        <option value="NFLX">NFLX - Netflix</option>
+                        <option value="AMD">AMD - Advanced Micro</option>
+                        <option value="CRM">CRM - Salesforce</option>
+                    </select>
+                </div>
+                <button onclick="loadStock()">Load Stock</button>
+                <button onclick="addToComparison()">Add to Compare</button>
+            </div>
+            <div class="error" id="errorMessage"></div>
+            <div class="loading" id="loadingIndicator">
+                <div class="spinner"></div>
+                <p>Loading stock data...</p>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="card">
+                <h3><span class="icon">📊</span>Stock Information</h3>
+                <div class="stock-info" id="stockInfo">
+                    <div class="info-item">
+                        <div class="info-label">Select a stock to view data</div>
+                        <div class="info-value">---</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3><span class="icon">📈</span>Price Chart</h3>
+                <div class="chart-container">
+                    <canvas id="priceChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card trending-stocks">
+                <h3><span class="icon">🔥</span>Trending Stocks</h3>
+                <div class="trending-grid">
+                    <div class="trending-item" onclick="selectTrendingStock('AAPL')">
+                        <div class="trending-symbol">AAPL</div>
+                        <div class="trending-name">Apple Inc.</div>
+                    </div>
+                    <div class="trending-item" onclick="selectTrendingStock('MSFT')">
+                        <div class="trending-symbol">MSFT</div>
+                        <div class="trending-name">Microsoft Corporation</div>
+                    </div>
+                    <div class="trending-item" onclick="selectTrendingStock('GOOGL')">
+                        <div class="trending-symbol">GOOGL</div>
+                        <div class="trending-name">Alphabet Inc.</div>
+                    </div>
+                    <div class="trending-item" onclick="selectTrendingStock('AMZN')">
+                        <div class="trending-symbol">AMZN</div>
+                        <div class="trending-name">Amazon.com Inc.</div>
+                    </div>
+                    <div class="trending-item" onclick="selectTrendingStock('TSLA')">
+                        <div class="trending-symbol">TSLA</div>
+                        <div class="trending-name">Tesla Inc.</div>
+                    </div>
+                    <div class="trending-item" onclick="selectTrendingStock('META')">
+                        <div class="trending-symbol">META</div>
+                        <div class="trending-name">Meta Platforms</div>
+                    </div>
+                    <div class="trending-item" onclick="selectTrendingStock('NVDA')">
+                        <div class="trending-symbol">NVDA</div>
+                        <div class="trending-name">NVIDIA Corporation</div>
+                    </div>
+                    <div class="trending-item" onclick="selectTrendingStock('NFLX')">
+                        <div class="trending-symbol">NFLX</div>
+                        <div class="trending-name">Netflix Inc.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3><span class="icon">⚖️</span>Stock Comparison</h3>
+                <table class="comparison-table" id="comparisonTable">
+                    <thead>
+                        <tr>
+                            <th>Symbol</th>
+                            <th>Price</th>
+                            <th>Change</th>
+                            <th>Change %</th>
+                            <th>Volume</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="comparisonBody">
+                        <tr>
+                            <td colspan="6" style="text-align: center; color: #666; padding: 20px;">
+                                No stocks added for comparison yet
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+  <script src="script.js"></script>
+</body>
+</html>
